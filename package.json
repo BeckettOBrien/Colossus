@@ -1,0 +1,30 @@
+{
+  "name": "colossus",
+  "version": "1.0.0",
+  "description": "A speedy, lightweight Express JS alternative.",
+  "main": "lib/index.js",
+  "directories": {
+    "test": "test",
+    "lib": "lib",
+    "example": "examples"
+  },
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ProjectColossus/Colossus.git"
+  },
+  "keywords": [],
+  "author": "Colossus Team",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ProjectColossus/Colossus/issues"
+  },
+  "homepage": "https://github.com/ProjectColossus/Colossus#readme",
+  "devDependencies": {
+    "chai": "^4.3.4",
+    "mocha": "^8.3.2",
+    "request": "^2.88.2"
+  }
+}
