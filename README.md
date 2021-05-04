@@ -4,6 +4,9 @@ A speedy, lightweight Express JS alternative.<br>
 - [Monotrix](https://github.com/Monotrix)
 - [iCraze](https://github.com/iCrazeiOS)
 
+**Credits**:
+- [Constanze](https://github.com/Julz4455) - Fixing up Server.js
+
 ---
 **How to Use**<br>
 For this example, I'll make a simple `POST` request that returns "Hi there!" and a `catchall` that returns "Page not found."

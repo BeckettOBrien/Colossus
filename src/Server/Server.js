@@ -2,117 +2,138 @@
 const http = require('http');
 
 // Request type definitions
-let uses = [];
-let gets = [];
-let heads = [];
-let posts = [];
-let puts = [];
-let deletes = [];
-let connects = [];
-let options = [];
-let traces = [];
-let patches = [];
-let catchall = [];
+const methodMap = {
+    uses: [],
+    gets: [],
+    heads: [],
+    posts: [],
+    puts: [],
+    deletes: [],
+    connects: [],
+    options: [],
+    traces: [],
+    patches: [],
+    catchall: []
+};
 
+/**
+ * Basic server class
+ */
 class Server {
-    /**     * Create Catchall for 404s
+    /**
+     * Create Catchall for 404s
      * @param Function value
-    **/
+     */
     async catchall(value) {
-        var toPush = {}
+        let toPush = {}
         toPush["catchall"] = value;
-        catchall.push(toPush);
+        methodMap.catchall.push(toPush);
     }
-    /**     * Create Request with any method
+    /**
+     * Create Request with any method
      * @param String name
      * @param Function value
-    **/
+     */
     async use(name, value) {
-        var toPush = {}
+        let toPush = {}
         toPush[name] = value;
-        uses.push(toPush);
+        methodMap.uses.push(toPush);
     }
-    /**     * Create GET request
+    /**
+     * Create GET request
      * @param String name
      * @param Function value
-    **/
+     */
     async get(name, value) {
-        var toPush = {}
+        let toPush = {}
         toPush[name] = value;
-        gets.push(toPush);
+        methodMap.gets.push(toPush);
     }
-    /**     * Create HEAD request
+    /**
+     * Create HEAD request
      * @param String name
      * @param Function value
-    **/
+     */
     async head(name, value) {
-        var toPush = {}
+        let toPush = {}
         toPush[name] = value;
-        heads.push(toPush);
+        methodMap.heads.push(toPush);
     }
-    /**     * Create POST request
+    /**
+     * Create POST request
      * @param String name
      * @param Function value
-    **/
+     */
     async post(name, value) {
-        var toPush = {}
+        let toPush = {}
         toPush[name] = value;
-        posts.push(toPush);
+        methodMap.posts.push(toPush);
     }
-    /**     * Create PUT request
+    /**
+     * Create PUT request
      * @param String name
      * @param Function value
-    **/
+     */
     async put(name, value) {
-        var toPush = {}
+        let toPush = {}
         toPush[name] = value;
-        puts.push(toPush);
+        methodMap.puts.push(toPush);
     }
-    /**     * Create DELETE request
+    /**
+     * Create DELETE request
      * @param String name
      * @param Function value
-    **/
+     */
     async delete(name, value) {
-        var toPush = {}
+        let toPush = {}
         toPush[name] = value;
-        deletes.push(toPush);
+        methodMap.deletes.push(toPush);
     }
-    /**     * Create CONNECT request
+    /**
+     * Create CONNECT request
      * @param String name
      * @param Function value
-    **/
+     */
     async connect(name, value) {
-        var toPush = {}
+        let toPush = {}
         toPush[name] = value;
-        connects.push(toPush);
+        methodMap.connects.push(toPush);
     }
-    /**     * Create OPTIONS request
+    /**
+     * Create OPTIONS request
      * @param String name
      * @param Function value
-    **/
+     */
     async options(name, value) {
-        var toPush = {}
+        let toPush = {}
         toPush[name] = value;
-        options.push(toPush);
+        methodMap.options.push(toPush);
     }
-    /**     * Create TRACE request
+    /**
+     * Create TRACE request
      * @param String name
      * @param Function value
-    **/
+     */
     async trace(name, value) {
-        var toPush = {}
+        let toPush = {}
         toPush[name] = value;
-        traces.push(toPush);
+        methodMap.traces.push(toPush);
     }
-    /**     * Create PATCH request
+    /**
+     * Create PATCH request
      * @param String name
      * @param Function value
-    **/
+     */
     async patch(name, value) {
-        var toPush = {}
+        let toPush = {}
         toPush[name] = value;
-        patches.push(toPush);
+        methodMap.patches.push(toPush);
     }
+
+    /**
+     * Starts a server instance.
+     * @param Number port
+     */
     async start(port) {
         http.createServer(function(request, response) {
             let toCatch = 1;
