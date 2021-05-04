@@ -137,7 +137,7 @@ class Server {
     async start(port) {
         http.createServer(function(request, response) {
             let toCatch = 1;
-            uses.forEach((server) => {
+            methodMap.uses.forEach((server) => {
                 if (request.url == Object.keys(server)[0]) {
                     toCatch = 0;
                     return Object.values(server)[0](request, response);
@@ -145,75 +145,76 @@ class Server {
             });
             switch (request.method) {
                 case 'GET':
-                    gets.forEach((server) => {
+                    methodMap.gets.forEach((server) => {
                         if (request.url == Object.keys(server)[0]) {
                             toCatch = 0;
                             return Object.values(server)[0](request, response);
                         }
                     });
                 case 'HEAD':
-                    heads.forEach((server) => {
+                    methodMap.heads.forEach((server) => {
                         if (request.url == Object.keys(server)[0]) {
                             toCatch = 0;
                             return Object.values(server)[0](request, response);
                         }
                     });
                 case 'POST':
-                    posts.forEach((server) => {
+                    methodMap.posts.forEach((server) => {
                         if (request.url == Object.keys(server)[0]) {
                             toCatch = 0;
                             return Object.values(server)[0](request, response);
                         }
                     });
                 case 'PUT':
-                    puts.forEach((server) => {
+                    methodMap.puts.forEach((server) => {
                         if (request.url == Object.keys(server)[0]) {
                             toCatch = 0;
                             return Object.values(server)[0](request, response);
                         }
                     });
                 case 'DELETE':
-                    deletes.forEach((server) => {
+                    methodMap.deletes.forEach((server) => {
                         if (request.url == Object.keys(server)[0]) {
                             toCatch = 0;
                             return Object.values(server)[0](request, response);
                         }
                     });
                 case 'CONNECT':
-                    connects.forEach((server) => {
+                    methodMap.connects.forEach((server) => {
                         if (request.url == Object.keys(server)[0]) {
                             toCatch = 0;
                             return Object.values(server)[0](request, response);
                         }
                     });
                 case 'OPTIONS':
-                    options.forEach((server) => {
+                    methodMap.options.forEach((server) => {
                         if (request.url == Object.keys(server)[0]) {
                             toCatch = 0;
                             return Object.values(server)[0](request, response);
                         }
                     });
                 case 'TRACE':
-                    traces.forEach((server) => {
+                    methodMap.traces.forEach((server) => {
                         if (request.url == Object.keys(server)[0]) {
                             toCatch = 0;
                             return Object.values(server)[0](request, response);
                         }
                     });
                 case 'PATCH':
-                    patches.forEach((server) => {
+                    methodMap.patches.forEach((server) => {
                         if (request.url == Object.keys(server)[0]) {
                             toCatch = 0;
                             return Object.values(server)[0](request, response);
                         }
                     });
             }
-            if (catchall != [] && toCatch == 1) {
+            if (methodMap.catchall.toString() != "" && toCatch == 1) {
                 let toUse;
-                for (const c in catchall) {
+                for (const c in methodMap.catchall) {
                     toUse = c;
                 }
-                let val = Object.values(catchall[toUse]);
+                console.log(methodMap.catchall)
+                let val = Object.values(methodMap.catchall[toUse]);
                 return val[0](request, response);
             }
         }).listen(port);
