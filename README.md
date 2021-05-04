@@ -1,6 +1,6 @@
 #### Colossus
 A speedy, lightweight Express JS alternative.<br>
-**Developers**:
+**Lead Developers**:
 - [Monotrix](https://github.com/Monotrix)
 - [iCraze](https://github.com/iCrazeiOS)
 
