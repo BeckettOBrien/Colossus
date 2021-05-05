@@ -46,13 +46,13 @@ describe("Simple server", () => {
   
   describe("Simple Catch All", () => {
     it("returns status 400", () => {
-      request(url, { method: "HEAD" }, function(_error, response, _body) {
+      request(url + "/jah", function(_error, response, _body) {
         expect(response.statusCode).to.equal(400)
       })
     })
     it("responds with data", () => {
-      request(url, { method: "HEAD" }, function(_error, _response, body) {
-        expect(body).to.equal("Unknown error")
+      request(url + "/jah", function(_error, _response, _body) {
+        expect(_body).to.equal("Unknown error")
       })
     })
   })
