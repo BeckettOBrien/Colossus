@@ -1,6 +1,6 @@
 #### Colossus
 
-<img title="Colossus" alt="Colossus Logo" src="./img/Colossus.png" style="height: 50px; width: 50px">
+<img title="Colossus" alt="Colossus Logo" src="./img/Colossus.png" width="50px" height="50px">
 
 
 A speedy, lightweight Express JS alternative.<br>
