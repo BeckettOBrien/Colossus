@@ -1,4 +1,4 @@
 theme: jekyll-theme-minimal
 title: Colossus Docs
 description: Colossus is a speedier, more lightweight Express JS alternative.
-logo: img/Colossus-Round.png
+logo: /assets/img/Colossus-Round.png
