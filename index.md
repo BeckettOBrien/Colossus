@@ -1,4 +1,4 @@
-#### Colossus
+# Colossus
 
 A speedy, lightweight Express JS alternative.<br>
 **Lead Developers**:
