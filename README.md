@@ -34,8 +34,8 @@ In addition to this, Colossus is also dep-less and completely in one file. Colos
 **How to Use**<br>
 For this example, I'll make a simple `POST` request that returns "Hi there!" and a `catchall` that returns "Page not found."
 ```js
-const Server = require("/path/to/Server.js");
-const server = new Server();
+const { Server } = require("/path/to/Server.js");
+const server = Server;
 const port = 1337;
 
 server.post("/test", async (req, res) => {
