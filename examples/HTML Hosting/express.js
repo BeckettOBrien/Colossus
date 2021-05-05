@@ -1,8 +1,7 @@
-const { Server } = require('../../lib/Server/Server');
-const server = Server;
+const express = require('express');
+const server = express();
 const port = 8000;
-const files = [
-    {
+const files = [{
         "/": "./index.html"
     },
     {
@@ -16,20 +15,20 @@ files.forEach(async (file) => {
     var s = Date.now();
     server.use(Object.keys(file)[0], async (req, res) => {
         var st = Date.now();
-        res.statusCode = 200;
-        res.end((await require("fs").readFileSync(Object.values(file)[0])))
+        await res.status(200).send((await require("fs").readFileSync(Object.values(file)[0])))
         console.log(`Responded in ${Date.now() - st} ms.`);
     })
     console.log(`Registered ${Object.keys(file)[0]} in ${Date.now() - s} ms.`);
 });
 
-server.catchall(async (req, res) => {
-    res.statusCode = 404;
-    res.end((await require("fs").readFileSync(catchall)));
+server.use(async (req, res) => {
+    var st = Date.now();
+    await res.status(404).send((await require("fs").readFileSync(catchall)))
+    console.log(`Responded to catchall in ${Date.now() - st} ms.`);
 });
 console.log(`Registered all files in ${Date.now() - fileTime} ms.`);
 
 var start = Date.now();
-server.start(port).then(() => {
+server.listen(port, () => {
     console.log(`Started up in ${Date.now() - start} ms.\nRunning on localhost:${port}`);
-})
+});
