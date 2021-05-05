@@ -1,5 +1,5 @@
-const Server = require('../../lib/Server/Server');
-const server = new Server();
+const { Server } = require('../../lib/Server/Server');
+const server = Server;
 const port = 8000;
 const files = [
     {
