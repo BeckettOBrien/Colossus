@@ -1,8 +1,9 @@
 {
   "name": "@projectcolossus/colossus",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "A speedy, lightweight Express JS alternative.",
-  "main": "./Colossus.js",
+  "main": "./lib/Colossus.js",
+  "types": "./lib/Colossus.d.ts",
   "private": false,
   "directories": {
     "test": "test",
