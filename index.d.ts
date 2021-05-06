@@ -6,6 +6,7 @@ declare module Colossus {
   type Incoming = http.IncomingMessage;
   type Outgoing = http.ServerResponse;
   type MethodMapKeys = "uses" | "gets" | "heads" | "posts" | "puts" | "deletes" | "connects" | "options" | "traces" | "patches" | "catchall";
+  type ColossusFunction = (req: Incoming, res: Outgoing) => void;
 
   /* Private classes ahead... but needed for type spec */
  class Params {
@@ -23,18 +24,18 @@ declare module Colossus {
 
   // Basic server class
   export class Server {
-    get req(): Function;
+    get req(): ColossusFunction;
 
-    catchall(f: Function);
-    use(m: string, f: Function);
-    get(m: string, f: Function);
-    head(m: string, f: Function);
-    post(m: string, f: Function);
-    put(m: string, f: Function);
-    delete(m: string, f: Function);
-    connect(m: string, f: Function);
-    options(m: string, f: Function);
-    trace(m: string, f: Function);
+    catchall(f: ColossusFunction);
+    use(m: string, f: ColossusFunction);
+    get(m: string, f: ColossusFunction);
+    head(m: string, f: ColossusFunction);
+    post(m: string, f: ColossusFunction);
+    put(m: string, f: ColossusFunction);
+    delete(m: string, f: ColossusFunction);
+    connect(m: string, f: ColossusFunction);
+    options(m: string, f: ColossusFunction);
+    trace(m: string, f: ColossusFunction);
 
     start(port: number);
   }
@@ -43,8 +44,8 @@ declare module Colossus {
   export class Plugins {
     enable();
     disable();
-    methodMap(): { [key in MethodMapKeys]: Function[] | Function };
+    methodMap(): { [key in MethodMapKeys]: ColossusFunction[] | ColossusFunction };
     plugins();
-    add(plugin: Function);
+    add(plugin: ColossusFunction);
   }
 }
