@@ -41,3 +41,8 @@ In addition to this, Colossus is also dep-less and (for those who don't like any
 - [`OPTIONS` endpoint creation](/options)
 - [`TRACE` endpoint creation](/trace)
 - [`PATCH` endpoint creation](/patch)
+
+**Plugin Docs**<br>
+- [Enable Plugins](/plugins/enable)
+- [Disable Plugins](/plugins/disable)
+- [Adding Plugins](/plugins/adding)

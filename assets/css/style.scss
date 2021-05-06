@@ -4,6 +4,7 @@
 
 body {
     background-color: rgb(24, 26, 27);
+    font-family: Arial, Helvetica, sans-serif;
     color: white;
 }
 
@@ -17,6 +18,10 @@ p {
 
 strong {
     color: white;
+}
+
+code {
+    font-family: "Lucida Console", "Courier New", monospace;
 }
 
 .language-plaintext {
