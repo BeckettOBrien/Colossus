@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # `HEAD` Endpoint Creation
 
 ---

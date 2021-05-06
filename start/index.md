@@ -1,4 +1,7 @@
-# Starting server
+---
+layout: default
+---
+#Starting server
 
 ---
 The `server.start()` function takes one argument: a port number. Starting a server with Colossus is very easy. Once you've installed Colossus (see [install](/install)), follow this code:<br>

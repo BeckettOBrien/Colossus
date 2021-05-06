@@ -1,6 +1,9 @@
-# Colossus
+---
+layout: default
+---
+# Home
 
-A speedy, lightweight Express JS alternative.<br>
+Colossus is a speedy, lightweight Express JS alternative.<br>
 **Lead Developers**:
 - [Monotrix](https://github.com/Monotrix)
 - [iCraze](https://github.com/iCrazeiOS)

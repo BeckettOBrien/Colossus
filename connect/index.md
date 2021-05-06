@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # `CONNECT` Endpoint Creation
 
 ---

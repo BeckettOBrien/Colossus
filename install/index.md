@@ -1,4 +1,7 @@
-# How to install Colossus
+---
+layout: default
+---
+#How to install Colossus
 
 ---
 First, install [npm](https://www.npmjs.com/get-npm) (or [yarn](https://yarnpkg.com/getting-started)).<br>

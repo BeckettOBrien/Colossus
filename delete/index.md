@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # `DELETE` Endpoint Creation
 
 ---

@@ -1,3 +1,6 @@
+---
+layout: default
+---
 # `TRACE` Endpoint Creation
 
 ---
