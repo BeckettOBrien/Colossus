@@ -27,3 +27,34 @@ code {
 .language-plaintext {
     color: white;
 }
+
+.highlight {
+    color: white;
+    background-color: rgb(24, 26, 27);
+}
+
+// ASYNC and EQUAL SIGNS
+.highlight .k {
+   color: orange;
+}
+.highlight .o {
+    color: orange;
+}
+
+// STRINGS
+.highlight .s2 {
+    color: red;
+}
+.highlight .dl {
+    color: rosybrown;
+}
+
+// SPECIFIERS
+.highlight .na {
+    color: aqua;
+}
+
+// EVERYTHING ELSE
+span {
+    color: white;
+}
