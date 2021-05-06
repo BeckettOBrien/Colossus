@@ -1,5 +1,5 @@
 {
-  "name": "@ajaidan0/colossus",
+  "name": "@projectcolossus/colossus",
   "version": "1.0.2",
   "description": "A speedy, lightweight Express JS alternative.",
   "main": "./Colossus.js",
@@ -18,7 +18,7 @@
   },
   "keywords": [],
   "author": "Colossus Team",
-  "license": "MIT",
+  "license": "ML",
   "bugs": {
     "url": "https://github.com/ProjectColossus/Colossus/issues"
   },

@@ -1,6 +1,8 @@
-const { Server } = require('../../lib/Server/Server')
+const { Server, Plugins } = require('../../lib/Server/Server')
 const server = Server;
 const port = 8000
+
+Plugins.enable();
 
 server.get("/", async (_req, res) => {
   res.statusCode = 200
